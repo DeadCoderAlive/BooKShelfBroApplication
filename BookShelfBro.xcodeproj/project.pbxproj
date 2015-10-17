@@ -15,6 +15,12 @@
 		D4803C761BD1E80F006C9A47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4803C741BD1E80F006C9A47 /* LaunchScreen.storyboard */; };
 		D4803C811BD1E80F006C9A47 /* BookShelfBroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4803C801BD1E80F006C9A47 /* BookShelfBroTests.swift */; };
 		D4803C8C1BD1E80F006C9A47 /* BookShelfBroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4803C8B1BD1E80F006C9A47 /* BookShelfBroUITests.swift */; };
+		D4803CA81BD1FC68006C9A47 /* BookShelfAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4803CA71BD1FC68006C9A47 /* BookShelfAPI.swift */; settings = {ASSET_TAGS = (); }; };
+		D4803CAA1BD20A87006C9A47 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4803CA91BD20A87006C9A47 /* AddBookViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D4803CAC1BD20B82006C9A47 /* BookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4803CAB1BD20B82006C9A47 /* BookTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D4803CB01BD210B6006C9A47 /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4803CAF1BD210B6006C9A47 /* Books.swift */; settings = {ASSET_TAGS = (); }; };
+		D4803CB21BD21189006C9A47 /* Books+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4803CB11BD21189006C9A47 /* Books+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		D4803CB41BD21B9A006C9A47 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4803CB31BD21B9A006C9A47 /* BookTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		D4803C871BD1E80F006C9A47 /* BookShelfBroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookShelfBroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4803C8B1BD1E80F006C9A47 /* BookShelfBroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShelfBroUITests.swift; sourceTree = "<group>"; };
 		D4803C8D1BD1E80F006C9A47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4803CA71BD1FC68006C9A47 /* BookShelfAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookShelfAPI.swift; sourceTree = "<group>"; };
+		D4803CA91BD20A87006C9A47 /* AddBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
+		D4803CAB1BD20B82006C9A47 /* BookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewController.swift; sourceTree = "<group>"; };
+		D4803CAF1BD210B6006C9A47 /* Books.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
+		D4803CB11BD21189006C9A47 /* Books+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Books+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D4803CB31BD21B9A006C9A47 /* BookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +111,14 @@
 		D4803C671BD1E80F006C9A47 /* BookShelfBro */ = {
 			isa = PBXGroup;
 			children = (
+				D4803CB51BD22446006C9A47 /* Views */,
+				D4803CA21BD1F1C6006C9A47 /* CRUDPersist */,
+				D4803C9B1BD1EE1C006C9A47 /* Models */,
 				D4803C681BD1E80F006C9A47 /* AppDelegate.swift */,
 				D4803C6A1BD1E80F006C9A47 /* ViewController.swift */,
 				D4803C6C1BD1E80F006C9A47 /* Main.storyboard */,
 				D4803C721BD1E80F006C9A47 /* Assets.xcassets */,
-				D4803C741BD1E80F006C9A47 /* LaunchScreen.storyboard */,
+				D4803C991BD1EC75006C9A47 /* Views */,
 				D4803C771BD1E80F006C9A47 /* Info.plist */,
 				D4803C6F1BD1E80F006C9A47 /* BookShelfBro.xcdatamodeld */,
 			);
@@ -126,6 +141,41 @@
 				D4803C8D1BD1E80F006C9A47 /* Info.plist */,
 			);
 			path = BookShelfBroUITests;
+			sourceTree = "<group>";
+		};
+		D4803C991BD1EC75006C9A47 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D4803C741BD1E80F006C9A47 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D4803C9B1BD1EE1C006C9A47 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D4803CB11BD21189006C9A47 /* Books+CoreDataProperties.swift */,
+				D4803CAF1BD210B6006C9A47 /* Books.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		D4803CA21BD1F1C6006C9A47 /* CRUDPersist */ = {
+			isa = PBXGroup;
+			children = (
+				D4803CA71BD1FC68006C9A47 /* BookShelfAPI.swift */,
+			);
+			name = CRUDPersist;
+			sourceTree = "<group>";
+		};
+		D4803CB51BD22446006C9A47 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D4803CA91BD20A87006C9A47 /* AddBookViewController.swift */,
+				D4803CAB1BD20B82006C9A47 /* BookTableViewController.swift */,
+				D4803CB31BD21B9A006C9A47 /* BookTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,7 +245,7 @@
 				TargetAttributes = {
 					D4803C641BD1E80F006C9A47 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = G9F86Z74RG;
+						DevelopmentTeam = B2NMY273BR;
 					};
 					D4803C7B1BD1E80F006C9A47 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -261,9 +311,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4803CAC1BD20B82006C9A47 /* BookTableViewController.swift in Sources */,
 				D4803C6B1BD1E80F006C9A47 /* ViewController.swift in Sources */,
+				D4803CB41BD21B9A006C9A47 /* BookTableViewCell.swift in Sources */,
 				D4803C711BD1E80F006C9A47 /* BookShelfBro.xcdatamodeld in Sources */,
+				D4803CA81BD1FC68006C9A47 /* BookShelfAPI.swift in Sources */,
 				D4803C691BD1E80F006C9A47 /* AppDelegate.swift in Sources */,
+				D4803CB21BD21189006C9A47 /* Books+CoreDataProperties.swift in Sources */,
+				D4803CB01BD210B6006C9A47 /* Books.swift in Sources */,
+				D4803CAA1BD20A87006C9A47 /* AddBookViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +461,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = BookShelfBro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Srinivasan.BookShelfBro;
@@ -416,6 +473,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = BookShelfBro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Srinivasan.BookShelfBro;
