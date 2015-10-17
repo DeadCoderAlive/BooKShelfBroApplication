@@ -37,11 +37,7 @@ class AddBookViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        bCode.text = bookAPI.getDetecedString()
-    }
-
+    
     @IBAction func readBook(sender: AnyObject) {
         if(readBook.selectedSegmentIndex == 0){
          readbook = "Has Read";
