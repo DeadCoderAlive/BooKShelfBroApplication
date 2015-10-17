@@ -111,7 +111,7 @@ class BarViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
         }
         
         print(detectionString!)
-        bookAPI.setDetectedString(detectionString! as String)
+        
         /*self.highlightView.frame = highlightViewRect*/
         self.view.bringSubviewToFront(self.highlightView)
         self.performSegueWithIdentifier("toAddBook", sender: self)
