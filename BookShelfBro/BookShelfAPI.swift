@@ -12,6 +12,7 @@ import CoreData
 class BookShelfAPI {
     
     let titleNamespace = BookAttributes.bookTitle.rawValue
+
     
     class var sharedInstance: BookShelfAPI {
         struct Singleton {
@@ -25,17 +26,20 @@ class BookShelfAPI {
 
     
   
-    func insertIntoDataStore(bookTitle: String!,bookAuthor: String!,bookPages: String!,read: String!){
+    func insertIntoDataStore(bookTitle: String!,bookAuthor: String!,bookPages: String!,read: String!,barCode: String!)->Bool{
          let context: NSManagedObjectContext = appDel.managedObjectContext
         let record = NSEntityDescription.insertNewObjectForEntityForName("Books", inManagedObjectContext: context)
         record.setValue(bookTitle, forKey: "bookTitle")
         record.setValue(bookAuthor, forKey: "bookAuthor")
         record.setValue(bookPages, forKey: "bookPages")
         record.setValue(read, forKey: "readBook")
+        record.setValue(barCode, forKey: "barCode")
         do {
             try context.save()
+            return true
         }catch {
             print("could not save")
+            return false
         }
         
     }

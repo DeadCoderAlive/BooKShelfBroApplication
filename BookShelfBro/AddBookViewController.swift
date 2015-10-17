@@ -9,19 +9,25 @@
 import UIKit
 
 class AddBookViewController: UIViewController {
-     var bookAPI = BookShelfAPI()
+    
+    var barView = BarViewController()
     @IBOutlet weak var bookTitle: UITextField!
     @IBOutlet weak var bookAuthor: UITextField!
     @IBOutlet weak var bookPages: UITextField!
     @IBOutlet weak var readBook: UISegmentedControl!
-    var readbook: String!
+    var readbook: String! = "Has Read"
+    var bcode: String! = ""
     
+   
+    @IBOutlet weak var EnterDetailsLabel: UILabel!
+       var bookAPI = BookShelfAPI()
     
-    @IBOutlet weak var barCode: UITextField!
-    
+    @IBOutlet weak var bCode: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        
 
         // Do any additional setup after loading the view.
     }
@@ -31,16 +37,10 @@ class AddBookViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        bCode.text = bookAPI.getDetecedString()
     }
-    */
 
     @IBAction func readBook(sender: AnyObject) {
         if(readBook.selectedSegmentIndex == 0){
@@ -53,8 +53,28 @@ class AddBookViewController: UIViewController {
     }
    
     @IBAction func saveBook(sender: AnyObject) {
-        bookAPI.insertIntoDataStore(bookTitle.text!, bookAuthor: bookAuthor.text!, bookPages: bookPages.text!, read: readbook!)
-        bookAPI.fetchFromDataStore()
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        /*bookTitle.text! =  ||  bookAuthor.text! = nil ||  bookPages.text! = nil) {
+            noDetailsEntered()
+        }*/
+        bookAPI.insertIntoDataStore(bookTitle.text!, bookAuthor: bookAuthor.text!, bookPages: bookPages.text!, read: readbook!,barCode: bCode.text!)
+        let alertController = UIAlertController(title: "Success", message: "Book was added succesfully", preferredStyle: .Alert)
+        
+        
+        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
+            self.performSegueWithIdentifier("BackToTable", sender: self)
+        }
+        alertController.addAction(OKAction)
+        
+        self.presentViewController(alertController, animated: true, completion:nil)
+    }
+    func noDetailsEntered() {
+        self.EnterDetailsLabel.text = "No Details Entered"
+    }
+    
+    @IBOutlet weak var setBarCode: UIButton!
+    
+    @IBAction func setBarCode(sender: AnyObject) {
+               print(bcode)
+        bCode.text = bcode
     }
 }

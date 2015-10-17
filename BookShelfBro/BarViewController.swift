@@ -15,7 +15,19 @@ class BarViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
     let session         : AVCaptureSession = AVCaptureSession()
     var previewLayer    : AVCaptureVideoPreviewLayer!
     var highlightView   : UIView = UIView()
+    var detectionString : String!
+    var bookAPI = BookShelfAPI()
+
     
+    func addPreviewLayer() {
+        previewLayer = AVCaptureVideoPreviewLayer(session: session)
+        previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+        previewLayer?.bounds = self.view.bounds
+        previewLayer?.position = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds))
+        self.view.layer.addSublayer(previewLayer!)
+
+    }
+         
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,23 +43,27 @@ class BarViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
         
         
         // For the sake of discussion this is the camera
-        let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        let captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        var error : NSError?
+        let inputDevice: AVCaptureDeviceInput!
+        do {
+            inputDevice = try AVCaptureDeviceInput(device: captureDevice)
+        } catch let error1 as NSError {
+            error = error1
+            inputDevice = nil
+        }
         
-        // Create a nilable NSError to hand off to the next method.
-        // Make sure to use the "var" keyword and not "let"
-        var error : NSError? = nil
-        let deviceInput : AVCaptureDeviceInput
-        do { deviceInput = try AVCaptureDeviceInput(device: device) } catch {return}
+        if let inp = inputDevice {
+            session.addInput(inp)
+        } else {
+            print(error)
+        }
+        addPreviewLayer()
+
         let output = AVCaptureMetadataOutput()
         output.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
         session.addOutput(output)
         output.metadataObjectTypes = output.availableMetadataObjectTypes
-        
-        
-        previewLayer = AVCaptureVideoPreviewLayer(session: session) as AVCaptureVideoPreviewLayer
-        previewLayer.frame = self.view.bounds
-        previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-        self.view.layer.addSublayer(previewLayer)
         
         // Start the scanner. You'll have to end it yourself later.
         session.startRunning()
@@ -61,7 +77,6 @@ class BarViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
         
         var barCodeObject : AVMetadataObject!
         
-        var detectionString : String!
         
         let barCodeTypes = [AVMetadataObjectTypeUPCECode,
             AVMetadataObjectTypeCode39Code,
@@ -76,7 +91,7 @@ class BarViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
         ]
         
         
-        // The scanner is capable of capturing multiple 2-dimensional barcodes in one scan.
+      
         for metadata in metadataObjects {
             
             for barcodeType in barCodeTypes {
@@ -95,11 +110,18 @@ class BarViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
             }
         }
         
-        print(detectionString)
-        self.highlightView.frame = highlightViewRect
+        print(detectionString!)
+        bookAPI.setDetectedString(detectionString! as String)
+        /*self.highlightView.frame = highlightViewRect*/
         self.view.bringSubviewToFront(self.highlightView)
+        self.performSegueWithIdentifier("toAddBook", sender: self)
+        
         
     }
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var code = detectionString!
+        let destinationView = segue.destinationViewController as! AddBookViewController
+        destinationView.bcode = code
+    }
     
 }
