@@ -9,7 +9,7 @@
 import UIKit
 
 class BookTableViewCell: UITableViewCell {
-
+//cell ccontroller to wire up the cell ui elements to the table view controller
     @IBOutlet weak var bookImageOnCell: UIImageView!
     @IBOutlet weak var bookTitleOnCell: UILabel!
     override func awakeFromNib() {

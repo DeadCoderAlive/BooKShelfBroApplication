@@ -18,7 +18,7 @@ class BarViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
     var detectionString : String!
     var bookAPI = BookShelfAPI()
 
-    
+    //preview layer to view the scanning area!!
     func addPreviewLayer() {
         previewLayer = AVCaptureVideoPreviewLayer(session: session)
         previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
@@ -34,7 +34,7 @@ class BarViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
         // Allow the view to resize freely
         highlightView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         
-        // Select the color you want for the completed scan reticle
+        // Select the color for the completed scan reticle
         self.highlightView.layer.borderColor = UIColor.greenColor().CGColor
         self.highlightView.layer.borderWidth = 3
         
@@ -42,7 +42,7 @@ class BarViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
         self.view.addSubview(self.highlightView)
         
         
-        // For the sake of discussion this is the camera
+        //capture device essentially the camera
         let captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         var error : NSError?
         let inputDevice: AVCaptureDeviceInput!
@@ -65,7 +65,7 @@ class BarViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
         session.addOutput(output)
         output.metadataObjectTypes = output.availableMetadataObjectTypes
         
-        // Start the scanner. You'll have to end it yourself later.
+        // Start the scanner.
         session.startRunning()
         
     }
@@ -118,10 +118,11 @@ class BarViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
         
         
     }
+    //segue with the detected barcode.
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var code = detectionString!
-        let destinationView = segue.destinationViewController as! AddBookViewController
-        destinationView.bcode = code
-    }
-    
+        
+             var code = detectionString!
+             let destinationView = segue.destinationViewController as! AddBookViewController
+             destinationView.bcode = code
+        }
 }

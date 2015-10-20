@@ -9,34 +9,27 @@
 import UIKit
 
 class BookDetailViewController: UIViewController {
-    
+    //various label for the attributes of the book
     @IBOutlet weak var BookTitle: UILabel!
-    
     @IBOutlet weak var bookAuthor: UILabel!
-    
     @IBOutlet weak var barCode: UILabel!
-
     @IBOutlet weak var bookPages: UILabel!
+    @IBOutlet weak var readbook: UILabel!
+    var bookList: Array<Books> = []
+    
+    var index = Int!()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+        let bookItem:Books!
+        bookItem = bookList[index]
+        BookTitle.text! = bookItem.bookTitle!
+        bookAuthor.text! = bookItem.bookAuthor!
+        barCode.text! = bookItem.barCode!
+        bookPages.text! = bookItem.bookPages!
+        readbook.text! = bookItem.readBook!
+                                  }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+            }
 }
