@@ -2,7 +2,7 @@
 
       BookShelfBroApplication
 
-Need to simulate it on a live phone to scan the barcode  and 
+Need to run it on a live phone to scan the barcode  and 
 Click on  the get the scanned barcode to get the barcode. And enter the details of the book and click save to save the book.
 
 BookTableViewController
