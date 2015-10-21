@@ -98,17 +98,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04BFEF521BD8487400550D53 /* images */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = images;
-			sourceTree = "<group>";
-		};
 		D4803C5C1BD1E80F006C9A47 = {
 			isa = PBXGroup;
 			children = (
-				04BFEF521BD8487400550D53 /* images */,
 				D44B82981BD2DCAD007BE083 /* Books+CoreDataProperties.swift */,
 				D44B82991BD2DCAD007BE083 /* Books.swift */,
 				D4803C671BD1E80F006C9A47 /* BookShelfBro */,
