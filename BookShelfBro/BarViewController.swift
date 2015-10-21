@@ -112,7 +112,7 @@ class BarViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
         
         print(detectionString!)
         
-        /*self.highlightView.frame = highlightViewRect*/
+        self.highlightView.frame = highlightViewRect
         self.view.bringSubviewToFront(self.highlightView)
         self.performSegueWithIdentifier("toAddBook", sender: self)
         
@@ -121,8 +121,9 @@ class BarViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
     //segue with the detected barcode.
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-             var code = detectionString!
+             let code = detectionString!
              let destinationView = segue.destinationViewController as! AddBookViewController
              destinationView.bcode = code
         }
+        
 }

@@ -11,7 +11,7 @@ import UIKit
 class BookTableViewController: UITableViewController {
     var bookList:Array<Books> = []
     var bookApi: BookShelfAPI!
-    let image = "book.jpg"
+
     var index = Int()
      var selectedBook = [String]()
     override func viewDidLoad() {
@@ -48,8 +48,7 @@ class BookTableViewController: UITableViewController {
         bookItem = bookList[indexPath.row]
         //book title on each cell
         cell.bookTitleOnCell.text = bookItem.bookTitle
-        //sample image on each cell
-        cell.bookImageOnCell.image = UIImage(named: image)
+
         return cell
     }
     
@@ -60,7 +59,7 @@ class BookTableViewController: UITableViewController {
     //segue to detailed view controller with the index of the selected row
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        
+        if(segue.identifier == "toBookDetail") {
         let destinationView = segue.destinationViewController as! BookDetailViewController
         let row = index
         print(row)
@@ -69,6 +68,6 @@ class BookTableViewController: UITableViewController {
             
            }
 
-    
+    }
 
 }

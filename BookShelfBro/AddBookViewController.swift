@@ -17,7 +17,7 @@ class AddBookViewController: UIViewController {
     @IBOutlet weak var readBook: UISegmentedControl!
     var readbook: String! = "Has Read"
     var bcode: String! = ""
-    var getDetails = GetBookDetails()
+    
     
    
     @IBOutlet weak var EnterDetailsLabel: UILabel!
@@ -68,6 +68,6 @@ class AddBookViewController: UIViewController {
     @IBAction func setBarCode(sender: AnyObject) {
                print(bcode)
         bCode.text = bcode
-        getDetails.updateLostAndFound()
+        
     }
 }
