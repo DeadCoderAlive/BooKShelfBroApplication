@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04BFEF531BD8489D00550D53 /* book@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04BFEF551BD8489D00550D53 /* book@2x.jpg */; };
-		04BFEF561BD848A400550D53 /* book@3x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04BFEF581BD848A400550D53 /* book@3x.jpg */; };
-		04BFEF591BD848AD00550D53 /* book@1x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04BFEF5B1BD848AD00550D53 /* book@1x.jpg */; };
 		D43128801BD2488900F909E7 /* BarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D431287F1BD2488900F909E7 /* BarViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D44B82971BD2D7F0007BE083 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44B82961BD2D7F0007BE083 /* BookDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D44B829A1BD2DCAD007BE083 /* Books+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44B82981BD2DCAD007BE083 /* Books+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
@@ -46,9 +43,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04BFEF541BD8489D00550D53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Base; path = "Base.lproj/book@2x.jpg"; sourceTree = "<group>"; };
-		04BFEF571BD848A400550D53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Base; path = "Base.lproj/book@3x.jpg"; sourceTree = "<group>"; };
-		04BFEF5A1BD848AD00550D53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Base; path = "Base.lproj/book@1x.jpg"; sourceTree = "<group>"; };
 		D431287F1BD2488900F909E7 /* BarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarViewController.swift; sourceTree = "<group>"; };
 		D44B82961BD2D7F0007BE083 /* BookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		D44B82981BD2DCAD007BE083 /* Books+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Books+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -158,9 +152,6 @@
 		D4803C991BD1EC75006C9A47 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				04BFEF5B1BD848AD00550D53 /* book@1x.jpg */,
-				04BFEF581BD848A400550D53 /* book@3x.jpg */,
-				04BFEF551BD8489D00550D53 /* book@2x.jpg */,
 				D4803C741BD1E80F006C9A47 /* LaunchScreen.storyboard */,
 			);
 			name = Views;
@@ -301,10 +292,7 @@
 			files = (
 				D4803C761BD1E80F006C9A47 /* LaunchScreen.storyboard in Resources */,
 				D4803C731BD1E80F006C9A47 /* Assets.xcassets in Resources */,
-				04BFEF561BD848A400550D53 /* book@3x.jpg in Resources */,
-				04BFEF591BD848AD00550D53 /* book@1x.jpg in Resources */,
 				D4803C6E1BD1E80F006C9A47 /* Main.storyboard in Resources */,
-				04BFEF531BD8489D00550D53 /* book@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,33 +363,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		04BFEF551BD8489D00550D53 /* book@2x.jpg */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04BFEF541BD8489D00550D53 /* Base */,
-			);
-			name = "book@2x.jpg";
-			path = ../../../Downloads;
-			sourceTree = "<group>";
-		};
-		04BFEF581BD848A400550D53 /* book@3x.jpg */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04BFEF571BD848A400550D53 /* Base */,
-			);
-			name = "book@3x.jpg";
-			path = ../../../Downloads;
-			sourceTree = "<group>";
-		};
-		04BFEF5B1BD848AD00550D53 /* book@1x.jpg */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04BFEF5A1BD848AD00550D53 /* Base */,
-			);
-			name = "book@1x.jpg";
-			path = ../../../Downloads;
-			sourceTree = "<group>";
-		};
 		D4803C6C1BD1E80F006C9A47 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
