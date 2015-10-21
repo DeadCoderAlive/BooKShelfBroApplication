@@ -32,7 +32,7 @@
                                             <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Book" translatesAutoresizingMaskIntoConstraints="NO" id="gnj-2e-onb">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gnj-2e-onb">
                                             <rect key="frame" x="8" y="0.0" width="584" height="104"/>
                                             <animations/>
                                             <constraints>
@@ -412,9 +412,6 @@
             <point key="canvasLocation" x="1105" y="1850"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Book" width="358" height="113"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Ofz-tS-Nl5"/>
         <segue reference="wNp-gW-Uz9"/>
